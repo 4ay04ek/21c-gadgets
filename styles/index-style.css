@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Jost";
+  overflow-x: hidden;
+  background-color: #EADDFF;
+}
+body::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  background-color: #8282E0;
+  transform: rotate(-4deg);
+  width: 3000;
+  height: 800px;
+  left: -500px;
+  bottom: -400px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+#title {
+  position: relative;
+  text-align: center;
+  line-height: 500px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 60;
+  font-size: 100px;
+  color: white;
+  margin: 0;
+  width: 100%;
+  height: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../img/bg.png");
+}
+#title::after {
+  content: "";
+  z-index: -3;
+  position: absolute;
+  background-color: #B69DF8;
+  transform: rotate(-200deg);
+  width: 3500;
+  height: 1000;
+  top: -770;
+  left: 0;
+}
+#title::before {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  background-color: #EADDFF;
+  transform: rotate(5deg);
+  width: 3500;
+  height: 1000;
+  top: -870;
+  left: 0;
+}
+
+#timeline-container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 80vw;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-size: 24px;
+  line-height: 24px;
+  color: white;
+}
+
+#month-timeline {
+  white-space: nowrap;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 300px;
+  font-size: 20px;
+}
+#month-timeline > div {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  line-height: 28px;
+  width: 8.3333333333%;
+  border-bottom: 3px solid black;
+  margin: 0 -3;
+}
+#month-timeline > div:first-child::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 2px;
+  height: 10px;
+  left: -2px;
+  bottom: -3px;
+}
+#month-timeline > div::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 2px;
+  height: 10px;
+  right: -2px;
+  bottom: -3px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  aspect-ratio: 1/1.5;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.item {
+  cursor: pointer;
+  z-index: 2;
+  color: black;
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
+  transition: 0.5s;
+}
+.item img {
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  width: 70%;
+  aspect-ratio: 1/1;
+}
+.item div {
+  text-align: right;
+  padding-right: 15px;
+  position: absolute;
+  left: 15px;
+  z-index: 1;
+  overflow: hidden;
+  width: 0px;
+  height: 100%;
+  transition: 0.3s;
+  border-radius: 15px;
+  background-color: white;
+}
+
+#timeline {
+  white-space: nowrap;
+}
+#timeline div {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  height: 28px;
+  text-align: center;
+  width: 18%;
+  min-width: 58px;
+  border-bottom: 3px solid black;
+  margin: 0 -3;
+}
+#timeline div .line {
+  position: absolute;
+  background-color: black;
+  width: 2px;
+  height: 25px;
+  right: -2px;
+  bottom: -3px;
+}
+#timeline div:nth-child(1) {
+  margin-left: 5%;
+}
+#timeline #y2000::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  width: 50px;
+  height: 0px;
+  left: -50px;
+  bottom: -3px;
+  border-bottom: 3px dashed black;
+  border-left: 3px solid transparent;
+}
+#timeline #y2022::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  width: 50px;
+  height: 0px;
+  right: -50px;
+  bottom: -3px;
+  border-bottom: 3px dashed black;
+  border-right: 3px solid transparent;
+}
+
+#pointer {
+  position: absolute;
+  transition: 0.5s;
+  width: 0px;
+  height: 0px;
+}
+#pointer::after {
+  content: "";
+  position: absolute;
+  border: 25px solid transparent;
+  border-bottom: 25px solid #EADDFF;
+  transform: scaleX(0.5);
+}/*# sourceMappingURL=index-style.css.map */
