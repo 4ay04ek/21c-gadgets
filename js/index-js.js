@@ -8,7 +8,9 @@ let max_distance;
 let poinerPositions = [];
 let max_width = 1800;
 let max_sizes = [1920, 500];
-let offset = "220px";
+let offset = "110px";
+
+if (document.documentElement.clientWidth > 1400) offset = "220px";
 
 screen.orientation.lock("portrait-primary");
 
@@ -97,7 +99,13 @@ if (document.documentElement.clientWidth < 600) {
     lines.forEach((el) => {
       el.style.height =
         Math.max(
-          40 * (1 - Math.abs(el.getBoundingClientRect().x - document.documentElement.clientWidth / 2) / max_distance),
+          40 *
+            (1 -
+              Math.abs(
+                el.getBoundingClientRect().x -
+                  document.documentElement.clientWidth / 2
+              ) /
+                max_distance),
           7
         ) + "px";
     });
@@ -106,7 +114,8 @@ if (document.documentElement.clientWidth < 600) {
   changeMeasures();
 
   const getYearSize = () => {
-    return document.querySelector("#timeline div").getBoundingClientRect().width;
+    return document.querySelector("#timeline div").getBoundingClientRect()
+      .width;
   };
 
   document.querySelectorAll("#timeline div").forEach((el) => {
@@ -134,34 +143,34 @@ if (document.documentElement.clientWidth < 600) {
     document.querySelectorAll(".item-container").forEach((el) => {
       el.style.top = -el.getBoundingClientRect().height - 5;
     });
-    document.querySelectorAll(".item img").forEach((el) => {
-      el.style.top = (el.parentElement.getBoundingClientRect().height - el.getBoundingClientRect().height) / 2;
-      el.style.left = (el.parentElement.getBoundingClientRect().width - el.getBoundingClientRect().width) / 2;
-    });
     document.querySelectorAll(".item").forEach((el) => {
       el.lastElementChild.style.opacity = 0;
-      el.lastElementChild.style.lineHeight = el.lastElementChild.getBoundingClientRect().height + "px";
+      el.lastElementChild.style.lineHeight =
+        el.lastElementChild.getBoundingClientRect().height + "px";
     });
   };
 
   const fixTitle = () => {
     document.getElementById("title").style.height =
       document.getElementById("title").getBoundingClientRect().width / 2.5;
-    document.getElementById("title").style.lineHeight =
-      document.getElementById("title").getBoundingClientRect().width / 2.5 + "px";
     document.getElementById("timeline-container").style.height =
       (500 * document.documentElement.clientWidth) / max_width + "px";
   };
 
   const fixFont = () => {
     document.getElementById("title").style.fontSize =
-      (100 * document.getElementById("title").getBoundingClientRect().width) / 1400 + "px";
+      (100 * document.getElementById("title").getBoundingClientRect().width) /
+        1400 +
+      "px";
     document.querySelectorAll("#month-timeline > div").forEach((e) => {
-      e.style.fontSize = (21 * document.documentElement.clientWidth) / max_width + "px";
-      e.style.lineHeight = (32 * document.documentElement.clientWidth) / max_width + 6 + "px";
+      e.style.fontSize =
+        (21 * document.documentElement.clientWidth) / max_width + "px";
+      e.style.lineHeight =
+        (32 * document.documentElement.clientWidth) / max_width + 6 + "px";
     });
     document.querySelectorAll("#timeline div").forEach((e) => {
-      e.style.fontSize = (32 * document.documentElement.clientWidth) / max_width + "px";
+      e.style.fontSize =
+        (32 * document.documentElement.clientWidth) / max_width + "px";
     });
   };
 
@@ -196,15 +205,23 @@ const items = {
   2000: {
     Январь: [],
     Февраль: [],
-    Март: [{ name: "PlayStation 2", img: "..\\img\\ps2.jpg", href: "pages\\ps-2.html" }],
+    Март: [],
     Апрель: [],
     Май: [],
     Июнь: [],
     Июль: [],
     Август: [],
     Сентябрь: [
-      { name: "Nokia 3310", img: "..\\img\\nokia3310.jpg", href: "pages\\nokia-3310.html" },
-      { name: "DiskOnKey", img: "..\\img\\diskonkey.jpg", href: "pages\\diskonkey.html" },
+      {
+        name: "Nokia 3310",
+        img: "..\\img\\nokia3310.jpg",
+        href: "pages\\nokia-3310.html",
+      },
+      {
+        name: "DiskOnKey",
+        img: "..\\img\\diskonkey.jpg",
+        href: "pages\\diskonkey.html",
+      },
     ],
     Октябрь: [],
     Ноябрь: [],
@@ -215,13 +232,25 @@ const items = {
     Февраль: [],
     Март: [],
     Апрель: [],
-    Май: [{ name: "Thinkpad T23", img: "..\\img\\thinkpad.jpg", href: "pages\\thinkpadt30.html" }],
+    Май: [],
     Июнь: [],
     Июль: [],
-    Август: [{ name: "MP3 iRiver", img: "..\\img\\iriver.jpg", href: "pages\\iriver.html" }],
+    Август: [
+      {
+        name: "MP3 iRiver",
+        img: "..\\img\\iriver.jpg",
+        href: "pages\\iriver.html",
+      },
+    ],
     Сентябрь: [],
     Октябрь: [],
-    Ноябрь: [],
+    Ноябрь: [
+      {
+        name: "iPod Classic",
+        img: "..\\img\\ipod.png",
+        href: "pages\\ipod.html",
+      },
+    ],
     Декабрь: [],
   },
   2002: {
@@ -300,7 +329,13 @@ const items = {
     Март: [],
     Апрель: [],
     Май: [],
-    Июнь: [],
+    Июнь: [
+      {
+        name: "iPhone",
+        img: "..\\img\\iphone.png",
+        href: "pages\\iphone.html",
+      },
+    ],
     Июль: [],
     Август: [],
     Сентябрь: [],
@@ -312,7 +347,13 @@ const items = {
     Январь: [],
     Февраль: [],
     Март: [],
-    Апрель: [],
+    Апрель: [
+      {
+        name: "Amazon Kindle",
+        img: "..\\img\\kindle.jpg",
+        href: "pages\\kindle.html",
+      },
+    ],
     Май: [],
     Июнь: [],
     Июль: [],
@@ -358,7 +399,13 @@ const items = {
     Май: [],
     Июнь: [],
     Июль: [],
-    Август: [],
+    Август: [
+      {
+        name: "Xiaomi Mi 1",
+        img: "..\\img\\xiaomi.jpg",
+        href: "pages\\xiaomi.html",
+      },
+    ],
     Сентябрь: [],
     Октябрь: [],
     Ноябрь: [],
@@ -381,7 +428,13 @@ const items = {
   2013: {
     Январь: [],
     Февраль: [],
-    Март: [],
+    Март: [
+      {
+        name: "Oculus Rift DK1",
+        img: "..\\img\\oculus.png",
+        href: "pages\\oculus.html",
+      },
+    ],
     Апрель: [],
     Май: [],
     Июнь: [],
@@ -397,7 +450,13 @@ const items = {
     Февраль: [],
     Март: [],
     Апрель: [],
-    Май: [],
+    Май: [
+      {
+        name: "Google Glass",
+        img: "..\\img\\glass.webp",
+        href: "pages\\google-glass.html",
+      },
+    ],
     Июнь: [],
     Июль: [],
     Август: [],
