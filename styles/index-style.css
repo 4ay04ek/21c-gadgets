@@ -168,7 +168,8 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  height: 28px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   width: 18%;
   min-width: 58px;

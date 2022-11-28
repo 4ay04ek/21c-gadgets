@@ -34,6 +34,11 @@ body {
   font-size: 42px;
   color: white;
 }
+@media screen {
+  #back {
+    font-size: 24px;
+  }
+}
 #back:hover {
   text-decoration: underline;
 }

@@ -8,7 +8,9 @@ let max_distance;
 let poinerPositions = [];
 let max_width = 1800;
 let max_sizes = [1920, 500];
-let offset = "180px";
+let offset = "220px";
+
+screen.orientation.lock("portrait-primary");
 
 const clearItems = () => {
   document.querySelectorAll(".item-container").forEach((el) => {
@@ -40,7 +42,7 @@ if (document.documentElement.clientWidth < 600) {
       let i = 0;
       for (let key in items[year]) {
         items[year][key].forEach((el) => {
-          createEl(months[i], el.img, el.name);
+          createEl(months[i], el.img, el.name, el.href);
         });
         i += 1;
       }
@@ -156,7 +158,7 @@ if (document.documentElement.clientWidth < 600) {
       (100 * document.getElementById("title").getBoundingClientRect().width) / 1400 + "px";
     document.querySelectorAll("#month-timeline > div").forEach((e) => {
       e.style.fontSize = (21 * document.documentElement.clientWidth) / max_width + "px";
-      e.style.lineHeight = (21 * document.documentElement.clientWidth) / max_width + 6 + "px";
+      e.style.lineHeight = (32 * document.documentElement.clientWidth) / max_width + 6 + "px";
     });
     document.querySelectorAll("#timeline div").forEach((e) => {
       e.style.fontSize = (32 * document.documentElement.clientWidth) / max_width + "px";
