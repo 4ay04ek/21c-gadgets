@@ -238,7 +238,7 @@ const items = {
     Август: [
       {
         name: "MP3 iRiver",
-        img: "..\\img\\iriver.jpg",
+        img: ".\\img\\iriver.jpg",
         href: "pages\\iriver.html",
       },
     ],
@@ -247,7 +247,7 @@ const items = {
     Ноябрь: [
       {
         name: "iPod Classic",
-        img: "..\\img\\ipod.png",
+        img: ".\\img\\ipod.png",
         href: "pages\\ipod.html",
       },
     ],
@@ -332,7 +332,7 @@ const items = {
     Июнь: [
       {
         name: "iPhone",
-        img: "..\\img\\iphone.png",
+        img: ".\\img\\iphone.png",
         href: "pages\\iphone.html",
       },
     ],
@@ -350,7 +350,7 @@ const items = {
     Апрель: [
       {
         name: "Amazon Kindle",
-        img: "..\\img\\kindle.jpg",
+        img: ".\\img\\kindle.jpg",
         href: "pages\\kindle.html",
       },
     ],
@@ -402,7 +402,7 @@ const items = {
     Август: [
       {
         name: "Xiaomi Mi 1",
-        img: "..\\img\\xiaomi.jpg",
+        img: ".\\img\\xiaomi.jpg",
         href: "pages\\xiaomi.html",
       },
     ],
@@ -431,7 +431,7 @@ const items = {
     Март: [
       {
         name: "Oculus Rift DK1",
-        img: "..\\img\\oculus.png",
+        img: ".\\img\\oculus.png",
         href: "pages\\oculus.html",
       },
     ],
@@ -453,7 +453,7 @@ const items = {
     Май: [
       {
         name: "Google Glass",
-        img: "..\\img\\glass.webp",
+        img: ".\\img\\glass.webp",
         href: "pages\\google-glass.html",
       },
     ],
