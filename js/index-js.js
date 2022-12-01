@@ -579,3 +579,18 @@ const items = {
     Декабрь: [],
   },
 };
+
+const fillItems = () => {
+  axios.get("http://5.228.43.243:7777/getPreview").then((res) => {
+    console.log(res.data);
+    res.data.forEach((item) => {
+      items[item.year][item.month].push({
+        name: item.name,
+        img: "http:////5.228.43.243:7777/" + item.preview,
+        href: "pages\\blank.html?name=" + item.name,
+      });
+    });
+  });
+};
+
+fillItems();

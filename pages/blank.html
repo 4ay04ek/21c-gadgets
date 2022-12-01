@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../styles/pages.css" rel="stylesheet" type="text/css" />
+    <link href="./img/ico.png" rel="icon" />
+    <title>iPhone</title>
+  </head>
+  <body>
+    <div id="back" onclick="document.location.href = '../index.html'">
+      Назад к хронологии
+    </div>
+    <div id="main-container"></div>
+    <div id="cursor"></div>
+    <div id="cursor_circle"></div>
+  </body>
+  <script src="../js/cursor.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    const name = params.name;
+    console.log(name);
+    axios
+      .get("http://5.228.43.243:7777/getContent", {
+        params: {
+          name: name,
+        },
+      })
+      .then((res) => {
+        document.getElementById("main-container").innerHTML = res.data;
+      });
+  </script>
+</html>
