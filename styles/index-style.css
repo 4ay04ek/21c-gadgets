@@ -58,7 +58,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 #timeline-container {
-  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -81,6 +80,7 @@ body::-webkit-scrollbar-thumb {
 
 #month-timeline {
   white-space: nowrap;
+  position: relative;
   width: 80%;
   margin: 0 auto;
   margin-top: 8%;
@@ -221,7 +221,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.5s;
   width: 0px;
   height: 0px;
-  bottom: calc(10% - 15px);
+  bottom: 20%;
 }
 #pointer::after {
   content: "";
@@ -232,11 +232,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 600px) {
-  #pointer::after {
+  #pointer {
     display: none;
-    border: 10px solid transparent;
-    border-left: 10px solid #eaddff;
-    transform: scaleY(0.5);
   }
   #title {
     width: 100%;
@@ -387,6 +384,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
 }
 #footer a:hover {
+  transition: 0.1s;
   color: #fffc00;
 }
 
@@ -465,4 +463,21 @@ body::-webkit-scrollbar-thumb {
   100% {
     text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff, -0.04em -0.025em 0 #fffc00;
   }
+}
+#add {
+  width: 60%;
+  margin: 0 auto;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #2b1fad;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  line-height: 50px;
+  transition: 0.1s;
+}
+#add:hover {
+  cursor: pointer;
+  color: #fffc00;
+  box-shadow: 0 0 10px black inset;
 }/*# sourceMappingURL=index-style.css.map */

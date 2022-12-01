@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../styles/info.css" rel="stylesheet" type="text/css" />
+    <link href="../img/ico.png" rel="icon" />
+    <title>О сайте</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <div style="font-size: 32px">Добавить статью</div>
+      <div style="margin-top: 15px" id="form">
+        <div>Название:</div>
+        <div><input type="text" name="name" /></div>
+      </div>
+      <div style="margin-top: 15px" id="form">
+        <div>Превью:</div>
+        <div><input id="file" type="file" name="preview" /></div>
+      </div>
+      <div id="textarea">
+        <div style="margin: 15 0 5 0">
+          Здесь вы можете написать основную часть (можно использовать теги):
+        </div>
+        <textarea style="height: 500px"></textarea>
+      </div>
+      <div id="send" onclick="send()" style="margin-top: 15">Отправить</div>
+    </div>
+    <div id="footer">
+      <div><a href="aboutme.html">Обо мне</a></div>
+      <div><a href="../index.html">Главная</a></div>
+      <div><a href="about.html">О сайте</a></div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="../js/post.js"></script>
+</html>

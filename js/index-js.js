@@ -6,7 +6,7 @@ let pointer = document.getElementById("pointer");
 let max_distance;
 
 let poinerPositions = [];
-let max_width = 1800;
+let max_width = 1920;
 let max_sizes = [1920, 500];
 let offset = "110px";
 
