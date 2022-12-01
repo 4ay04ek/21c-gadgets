@@ -177,6 +177,7 @@ if (document.documentElement.clientWidth < 600) {
   const fixItemEvents = () => {
     document.querySelectorAll(".item").forEach((el) => {
       el.onmouseover = () => {
+        el.lastElementChild.style.transition = "0.2s";
         el.lastElementChild.style.width = offset;
         el.lastElementChild.style.opacity = 1;
       };
