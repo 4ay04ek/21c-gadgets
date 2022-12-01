@@ -214,12 +214,12 @@ const items = {
     Сентябрь: [
       {
         name: "Nokia 3310",
-        img: "..\\img\\nokia3310.jpg",
+        img: ".\\img\\nokia3310.jpg",
         href: "pages\\nokia-3310.html",
       },
       {
         name: "DiskOnKey",
-        img: "..\\img\\diskonkey.jpg",
+        img: ".\\img\\diskonkey.jpg",
         href: "pages\\diskonkey.html",
       },
     ],
