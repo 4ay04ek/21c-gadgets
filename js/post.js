@@ -27,21 +27,28 @@ function send() {
   formData.append("image", file.files[0]);
   const content = document.querySelector("textarea[name='content']").value;
   if (name == undefined) showError();
-  if (year == undefined) showError();
-  if (month == undefined) showError();
-  if (file.files[0] == undefined) showError();
-  if (content == undefined) showError();
-  console.log(formData);
-  console.log(file.files[0]);
-  axios.post("http://5.228.43.243:7777/post", {
-    name: name,
-    year: year,
-    month: month,
-    content: content,
-  });
-  axios.post("http://5.228.43.243:7777/upload_image", formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+  else if (year == undefined) showError();
+  else if (month == undefined) showError();
+  else if (file.files[0] == undefined) showError();
+  else if (content == undefined) showError();
+  else {
+    axios.post("https://ultrabizzare.site/post", {
+      name: name,
+      year: year,
+      month: month,
+      content: content,
+    });
+    axios.post("https://ultrabizzare.site/upload_image", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    document.getElementById("send").innerHTML = "Спасибо за помощь сайту!";
+    document.getElementById("send").onclick = undefined;
+    document.getElementById("send").style.cursor = "default";
+    document.getElementById("send").style.color = "white";
+    document.getElementById("send").onmouseover = () => {
+      document.getElementById("send").style.color = "white";
+    };
+  }
 }

@@ -3,10 +3,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../styles/pages.css" rel="stylesheet" type="text/css" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
     <link href="./img/ico.png" rel="icon" />
     <title>iPhone</title>
   </head>
@@ -27,7 +23,7 @@
     const name = params.name;
     console.log(name);
     axios
-      .get("http://5.228.43.243:7777/getContent", {
+      .get("https://ultrabizzare.site/getContent", {
         params: {
           name: name,
         },
