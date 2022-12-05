@@ -25,10 +25,7 @@ const createEl = (parent, src, name, href) => {
   node.classList.add("item");
   let img = document.createElement("img");
   img.src = src;
-  let div = document.createElement("div");
-  div.innerHTML = name;
   node.appendChild(img);
-  node.appendChild(div);
   node.onclick = () => {
     window.location.href = href;
   };
@@ -84,6 +81,7 @@ if (document.documentElement.clientWidth < 600) {
     fixTitle();
     fixFont();
     showYearInfo();
+    changeMeasures();
   };
 
   window.onresize = () => {
@@ -143,11 +141,6 @@ if (document.documentElement.clientWidth < 600) {
     document.querySelectorAll(".item-container").forEach((el) => {
       el.style.top = -el.getBoundingClientRect().height - 5;
     });
-    document.querySelectorAll(".item").forEach((el) => {
-      el.lastElementChild.style.opacity = 0;
-      el.lastElementChild.style.lineHeight =
-        el.lastElementChild.getBoundingClientRect().height + "px";
-    });
   };
 
   const fixTitle = () => {
@@ -174,20 +167,6 @@ if (document.documentElement.clientWidth < 600) {
     });
   };
 
-  const fixItemEvents = () => {
-    document.querySelectorAll(".item").forEach((el) => {
-      el.onmouseover = () => {
-        el.lastElementChild.style.transition = "0.2s";
-        el.lastElementChild.style.width = offset;
-        el.lastElementChild.style.opacity = 1;
-      };
-      el.onmouseleave = () => {
-        el.lastElementChild.style.width = "0px";
-        el.lastElementChild.style.opacity = 0;
-      };
-    });
-  };
-
   const showYearInfo = (year) => {
     let months = document.querySelectorAll(".item-container");
     let i = 0;
@@ -195,7 +174,6 @@ if (document.documentElement.clientWidth < 600) {
       items[year][key].forEach((el) => {
         createEl(months[i], el.img, el.name, el.href);
         fixTopItems();
-        fixItemEvents();
       });
       i += 1;
     }
@@ -216,12 +194,12 @@ const items = {
       {
         name: "Nokia 3310",
         img: ".\\img\\nokia3310.jpg",
-        href: "pages\\nokia-3310.html",
+        href: "pages\\nokia-3310",
       },
       {
         name: "DiskOnKey",
         img: ".\\img\\diskonkey.jpg",
-        href: "pages\\diskonkey.html",
+        href: "pages\\diskonkey",
       },
     ],
     Октябрь: [],
@@ -240,7 +218,7 @@ const items = {
       {
         name: "MP3 iRiver",
         img: ".\\img\\iriver.jpg",
-        href: "pages\\iriver.html",
+        href: "pages\\iriver",
       },
     ],
     Сентябрь: [],
@@ -249,7 +227,7 @@ const items = {
       {
         name: "iPod Classic",
         img: ".\\img\\ipod.png",
-        href: "pages\\ipod.html",
+        href: "pages\\ipod",
       },
     ],
     Декабрь: [],
@@ -334,7 +312,7 @@ const items = {
       {
         name: "iPhone",
         img: ".\\img\\iphone.png",
-        href: "pages\\iphone.html",
+        href: "pages\\iphone",
       },
     ],
     Июль: [],
@@ -352,7 +330,7 @@ const items = {
       {
         name: "Amazon Kindle",
         img: ".\\img\\kindle.jpg",
-        href: "pages\\kindle.html",
+        href: "pages\\kindle",
       },
     ],
     Май: [],
@@ -404,7 +382,7 @@ const items = {
       {
         name: "Xiaomi Mi 1",
         img: ".\\img\\xiaomi.jpg",
-        href: "pages\\xiaomi.html",
+        href: "pages\\xiaomi",
       },
     ],
     Сентябрь: [],
@@ -433,7 +411,7 @@ const items = {
       {
         name: "Oculus Rift DK1",
         img: ".\\img\\oculus.png",
-        href: "pages\\oculus.html",
+        href: "pages\\oculus",
       },
     ],
     Апрель: [],
@@ -455,7 +433,7 @@ const items = {
       {
         name: "Google Glass",
         img: ".\\img\\glass.webp",
-        href: "pages\\google-glass.html",
+        href: "pages\\google-glass",
       },
     ],
     Июнь: [],
@@ -581,13 +559,12 @@ const items = {
 };
 
 const fillItems = () => {
-  axios.get("https://ultrabizzare.site/getPreview").then((res) => {
-    console.log(res.data);
+  axios.get("https://ultrabizzare.site/api/getPreview").then((res) => {
     res.data.forEach((item) => {
       items[item.year][item.month].push({
         name: item.name,
-        img: "https://ultrabizzare.site/" + item.preview,
-        href: "pages\\blank.html?name=" + item.name,
+        img: "https://ultrabizzare.site/api/" + item.preview,
+        href: "pages\\blank?name=" + item.name,
       });
     });
   });

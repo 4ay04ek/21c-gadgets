@@ -32,13 +32,13 @@ function send() {
   else if (file.files[0] == undefined) showError();
   else if (content == undefined) showError();
   else {
-    axios.post("https://ultrabizzare.site/post", {
+    axios.post("https://ultrabizzare.site/api/post", {
       name: name,
       year: year,
       month: month,
       content: content,
     });
-    axios.post("https://ultrabizzare.site/upload_image", formData, {
+    axios.post("https://ultrabizzare.site/api/upload_image", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

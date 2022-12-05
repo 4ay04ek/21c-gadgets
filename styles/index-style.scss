@@ -11,7 +11,8 @@ a {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: "Jost";
   overflow-x: hidden;
@@ -142,22 +143,9 @@ body::-webkit-scrollbar-thumb {
     width: auto;
     max-width: 70%;
   }
-  div {
-    text-align: right;
-    padding-right: 15px;
-    position: absolute;
-    top: 0px;
-    left: 13%;
-    z-index: 1;
-    overflow: hidden;
-    width: 0px;
-    height: 100%;
-    transition: 0.3s;
-    border-radius: 15px;
-    @media screen and (max-width: 800px) {
-      border-radius: 5px;
-    }
-    background-color: white;
+  transition: 0.1s;
+  &:hover {
+    box-shadow: 0 0 10px black inset;
   }
 }
 
@@ -233,7 +221,7 @@ body::-webkit-scrollbar-thumb {
   }
   #title {
     width: 100%;
-    font-size: 24px;
+    font-size: 38px;
     line-height: 200px;
     height: 200px;
   }
@@ -342,25 +330,27 @@ body::-webkit-scrollbar-thumb {
     width: 250px;
   }
   .item {
-    width: fit-content;
+    width: 100px;
     height: 28.167px;
+    padding-right: 100px;
+    margin: 0;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-left: 0px;
     &:nth-child(2) {
       margin-left: 10px;
       border-radius: 5px;
     }
-    div {
-      width: 120px;
-      padding-left: 25px;
-    }
     img {
       position: relative;
       top: 4px;
+      left: 4px;
+      max-width: none;
       height: 20px;
       width: auto;
+    }
+    &:hover {
+      box-shadow: none;
     }
   }
 }
@@ -441,6 +431,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #add {
+  position: relative;
+  z-index: 5;
   width: 60%;
   margin: 0 auto;
   height: 50px;

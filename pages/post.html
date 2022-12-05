@@ -15,7 +15,9 @@
       </div>
       <div style="margin-top: 15px" id="form">
         <div>Дата выхода:</div>
-        <div><input type="date" name="year" /></div>
+        <div>
+          <input type="date" name="year" min="2000-01-01" />
+        </div>
       </div>
       <div style="margin-top: 15px" id="form">
         <div>Превью:</div>
@@ -29,10 +31,11 @@
       </div>
       <div id="send" onclick="send()" style="margin-top: 15">Отправить</div>
     </div>
+    <div style="height: 100px"></div>
     <div id="footer">
-      <div><a href="aboutme.html">Обо мне</a></div>
-      <div><a href="../index.html">Главная</a></div>
-      <div><a href="about.html">О сайте</a></div>
+      <div><a href="aboutme">Обо мне</a></div>
+      <div><a href="../">Главная</a></div>
+      <div><a href="about">О сайте</a></div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>

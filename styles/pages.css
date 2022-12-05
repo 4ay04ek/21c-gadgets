@@ -73,6 +73,7 @@ body {
 }
 
 #main-container {
+  word-break: break-all;
   width: 80%;
   font-size: 20px;
   margin: 0 auto;
@@ -91,4 +92,11 @@ body {
   position: relative;
   margin: 15 0;
   left: 10%;
+}
+#main-container div {
+  width: 100%;
+  text-align: center;
+}
+#main-container div h1 {
+  margin: 10 0;
 }/*# sourceMappingURL=pages.css.map */

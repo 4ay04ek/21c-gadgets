@@ -107,6 +107,9 @@ body {
     border-bottom: 2px solid white;
     background: transparent;
   }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 #textarea {
