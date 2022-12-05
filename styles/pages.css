@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-html {
-  cursor: none;
-}
-
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -28,6 +24,7 @@ body {
 }
 
 #back {
+  cursor: pointer;
   position: absolute;
   width: 100%;
   top: 5px;
@@ -42,34 +39,6 @@ body {
 }
 #back:hover {
   text-decoration: underline;
-}
-
-#cursor {
-  pointer-events: none;
-  transition: 0.05s;
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  mix-blend-mode: difference;
-  filter: blur(4px);
-  border-radius: 50%;
-}
-
-#cursor_circle {
-  pointer-events: none;
-  transition: 0.1s;
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 50px;
-  height: 50px;
-  border: 1.5px solid white;
-  filter: blur(0.5px);
-  mix-blend-mode: difference;
-  border-radius: 50%;
 }
 
 #main-container {
