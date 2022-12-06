@@ -27,6 +27,7 @@ body {
 }
 
 #back {
+  user-select: none;
   cursor: pointer;
   position: absolute;
   width: 100%;
@@ -43,7 +44,7 @@ body {
 }
 
 #main-container {
-  word-break: break-all;
+  word-break: normal;
   width: 80%;
   font-size: 20px;
   margin: 0 auto;
@@ -68,5 +69,8 @@ body {
     h1 {
       margin: 10 0;
     }
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
   }
 }

@@ -21,7 +21,9 @@
       </div>
       <div style="margin-top: 15px" id="form">
         <div>Превью:</div>
-        <div><input id="file" type="file" name="preview" /></div>
+        <div>
+          <input id="file" type="file" name="preview" accept="image/*" />
+        </div>
       </div>
       <div id="textarea">
         <div style="margin: 15 0 5 0">
@@ -32,10 +34,11 @@
       <div id="send" onclick="send()" style="margin-top: 15">Отправить</div>
     </div>
     <div style="height: 100px"></div>
-    <div id="footer">
-      <div><a href="aboutme">Об авторе</a></div>
+    <div id="footer" class=".mobile_fix">
       <div><a href="../">Главная</a></div>
+      <div><a href="aboutme">Об авторе</a></div>
       <div><a href="about">О сайте</a></div>
+      <div><a href="feedback">Оставить отзыв</a></div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>

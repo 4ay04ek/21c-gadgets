@@ -88,6 +88,9 @@ body {
   a:hover {
     color: #fffc00;
   }
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
 }
 
 #form {
